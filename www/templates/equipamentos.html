@@ -1,0 +1,38 @@
+﻿<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title"><i class="icon ion-person-add"></i> Equipamentos</h1>
+        <div class="buttons">
+            <button id="fechareq" class="button button-clear" ng-click="closeModal('equipamentos')">Fechar   </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="card">
+            <div class="list">
+                <div class="bar bar-header bar-royal">
+                    <h1 class="title"> Equipamento</h1>
+                </div>
+                <br />
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Equipamento</span>
+                    <input type="text" placeholder="Colete Klevar" ng-model="equipamento.nome" ng-show="!edit">                    
+                    <input type="text" placeholder="Colete Klevar" ng-model="equipamentoedit.nome" ng-show="edit">                    
+                </label>
+                <label class="item item-input item-input" >
+                    <div class="input-label positive">
+                        Descrição
+                    </div>
+                    <input type="text"  placeholder="+2 no RD" ng-model="equipamento.descricao" ng-show="!edit">
+                    <input type="text" placeholder="+2 no RD" ng-model="equipamentoedit.descricao" ng-show="edit">
+                </label>
+                <button class="button button-clear button-positive" ng-click="salvarEquipamento(equipamento)" ng-show="!edit"> 
+                    <span class="ion-plus-circled"></span> Salvar
+                </button>  
+                <button class="button button-clear button-positive" ng-click="editarEquipamentoUsuario()" ng-show="edit">
+                    <span class="ion-plus-circled"></span> Editar
+                </button>  
+                           
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

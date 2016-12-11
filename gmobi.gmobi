@@ -1,0 +1,21 @@
+//criacao do projeto
+cordova create Gmobi com.gurps.gmobi Gmobi
+
+//plugins usados
+cordova plugin add cordova-plugin-camera --save
+cordova plugin add cordova-sqlite-storage --save
+cordova plugin add cordova-plugin-vibration --save
+cordova plugin add cordova-plugin-x-socialsharing --save
+
+//criando a keystore para androi
+jarsigner -verbose -keystore d:\\gmobi.keystore c:\users\aldo\documents\projetos\mobilestudy\gmobi\platforms\android\build\outputs\apk\android-release-unsigned.apk AcsMobileApps
+//assinando o projeto para publish do android (atento ao caminho atual)
+jarsigner -verify c:\users\aldo\documents\projetos\mobilestudy\gmobi\platforms\android\build\outputs\apk\android-release-unsigned.apk
+
+//zipalign 
+zipalign -f -v 4 c:\users\aldo\documents\projetos\mobilestudy\gmobi\platforms\android\build\outputs\apk\android-release-signed.apk c:\users\aldo\documents\projetos\mobilestudy\gmobi\platforms\android\build\outputs\apk\android-release-zipsigned.apk
+
+//variaveis de ambiente
+C:\Program Files (x86)\Android\android-sdk\build-tools\22.0.1
+set ANDROID_HOME=C:\Program Files (x86)\Android\android-sdk
+set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools

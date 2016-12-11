@@ -1,0 +1,187 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title"><i class="icon ion-person-add"></i>  <span ng-show="user.id">Editar </span> <span ng-show="!user.id"></span> Personagem</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModal('novo')">Fechar   </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="list card">
+                <div class="item item-text-wrap bar bar-header bar-royal">
+                    Imagem
+                </div>
+                <div class="item item-image">                    
+                    <canvas id="myCanvas" width="{{windowConfig.screenResolution.getIdealw()+'px'}}" height="{{windowConfig.screenResolution.getIdealh()+'px'}}" style='border:1px solid transparent'>
+                        Seu dispositivo estranhamente não suporta HTML5.
+                    </canvas>                    
+                </div>
+                <button class="button button-clear button-positive" id="btncarregar" ng-click="pic();">
+                    <span class="ion-plus-circled"></span> Carregar
+                </button>
+            </div>
+            <div class="card">
+                <div class="item item-text-wrap bar bar-header bar-royal">
+                    Atributos <span ng-show="!editando">- Total ({{atributoscustonovaficha}})</span> 
+                </div>
+                <label class="item item-input">
+                    <span class="input-label positive">Nome</span>
+                    <input type="text" placeholder="Ex. Leon" ng-model="user.nome">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label positive">ST</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.st" 
+                    ng-blur="atributosCalc();">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label positive">DX</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.dx"
+                    ng-blur="atributosCalc();">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label positive">IQ</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.iq"
+                    ng-blur="atributosCalc();">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label positive">HT</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.ht"
+                    ng-blur="atributosCalc();">
+                </label>
+
+
+                <label class="item item-input" ng-show="editando">
+                    <span class="input-label positive">PV</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.pv">
+                </label>
+                <label class="item item-input" ng-show="editando">
+                    <span class="input-label positive">VON</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.von">
+                </label>
+
+                <label class="item item-input" ng-show="editando">
+                    <span class="input-label positive">PER</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.per">
+                </label>
+                <label class="item item-input" ng-show="editando">
+                    <span class="input-label positive">PF</span>
+                    <input type="number" placeholder="Ex. 10" ng-model="user.atributos.pf">
+                </label>
+
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label positive">Frase do personagem</span>
+                    <textarea style="height:50px" placeholder="" ng-model="user.mote"></textarea>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label positive">Frase Descritiva</span>
+                    <textarea style="height:50px" placeholder="" ng-model="user.background"></textarea>
+                </label>
+            </div>
+            <div class="card">
+                <div class="item item-text-wrap bar bar-header bar-royal">
+                    Vantagens <span ng-show="!editando">- Total ({{labelVantagemTotal }}) </span>   
+                    <span ng-click="carregandoVantagens()" style='float:right !important;'> <a class="icon ion-refresh loadIcon " ></a> </span>                
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Vantagem" ng-model="vantagem.nome" id="txtvantagem">
+                </label>
+                <ion-scroll zooming="true" direction="y" style="height: 200px">
+                    <div class="list">
+                        <a class="item item-avatar" href="#" ng-repeat="vant in listavantagens |filter:vantagem">
+                            <img src="img/Add-icon.png" alt="Alternate Text" style="width:30px;height:30px;cursor:pointer" ng-click="addVantagem(vant);" />
+                            <h2>{{vant.nome}}</h2>
+                            <p>{{vant.custo}}</p>
+                        </a>
+                    </div>
+                </ion-scroll>
+                <div class="card" ng-show="user.vantagens">
+                    <ul class="list">
+                        <li class="item" ng-repeat="v in user.vantagens">
+                            <div class="item item-text-wrap">
+                                {{v.nome}}
+                                <button class="button button-assertive" style="float:right" ng-click="removeVantagem(v)">
+                                    <i class="icon ion-trash-a"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="item item-text-wrap bar bar-header bar-royal">
+                    Desvantagens <span ng-show="!editando">- Total ({{labelDesVantagemTotal }})</span>   
+                    <span ng-click="carregandoDesvantagens()" style='float:right !important;'> <a  class="icon ion-refresh loadIcon" ></a> </span>                 
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Desvantagem" ng-model="desvantagem.nome" id="txtdesvantagem">
+                </label>
+                <ion-scroll zooming="true" direction="y" style="height: 200px">
+                    <div class="list">
+                        <a class="item item-avatar" href="#" ng-repeat="desvant in listadesvantagens |filter:desvantagem">
+                            <img src="img/Add-icon.png" alt="Alternate Text" style="width:30px;height:30px;cursor:pointer" ng-click="addDesvantagem(desvant);" />
+                            <h2>{{desvant.nome}}</h2>
+                            <p>{{desvant.custo}}</p>
+                        </a>
+                    </div>
+                </ion-scroll>
+                <div class="card" ng-show="user.desvantagens">
+                    <ul class="list">
+                        <li class="item" ng-repeat="d in user.desvantagens">
+                            <div class="item item-text-wrap">
+                                {{d.nome}}
+                                <button class="button button-assertive" style="float:right" ng-click="removeDesvantagem(d)">
+                                    <i class="icon ion-trash-a"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="item item-text-wrap bar bar-header bar-royal">
+                    Pericias <span ng-show="!editando">- Total ({{somacustopericias}})</span> 
+                    <span style='float:right !important;' ng-click="carregandoPericias()"> <a class="icon ion-refresh loadIcon" ></a> </span>
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Pericia" ng-model="pericia.nome" id="txtpericianome">
+                </label>
+                <ion-scroll zooming="true" direction="y" style="height: 200px">
+                    <div class="list">
+                        <a class="item item-avatar" href="#" ng-repeat="list in listapericias |filter:pericia">
+                            <img src="img/Add-icon.png" alt="Alternate Text" style="width:30px;height:30px;cursor:pointer" ng-click="fill(list)" />
+                            <h2>{{list.nome}}</h2>
+                            <p>{{list.nh}} - {{list.custo}}</p>
+                        </a>
+                    </div>
+                </ion-scroll>
+                <div class="card" ng-show="user.pericias">
+                    <ul class="list">
+                        <li class="item" ng-repeat="p in user.pericias">
+                            <div class="item item-text-wrap">
+                                {{p.nome}} - {{p.nh}}
+                                <button class="button button-assertive" style="float:right" ng-click="removePericia(p)">
+                                    <i class="icon ion-trash-a"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>            
+            <div class="item item-text-wrap" ng-show="!editando">
+                <div class="item item-divider assertive">
+                    <span class="ion-calculator"></span> Total Pontos - {{totalprecoficha}}
+                </div>                            
+            </div>
+            <div class="card">
+                <div class="button-bar">
+                    <a class="button button-positive" ng-click="salvar()" ng-show="!user.id">Salvar</a>
+                    <a class="button button-positive" ng-click="editarRegistro()" ng-show="user.id">Atualizar</a>
+                    <a class="button button-clear" ng-click="clearForm()">Limpar</a>
+                    <a class="button button-assertive" ng-click="excluir()" ng-show="user.id">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

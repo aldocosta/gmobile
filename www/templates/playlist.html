@@ -1,0 +1,271 @@
+<ion-view view-title="{{parametro}} ">
+    <ion-content>
+
+        <div class="list" ng-show="atributos">
+            <!--Atributos basicos-->
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">ST</span>
+                        <span class="input-label lblwhite">{{personagem.atributos.st}}</span>
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">PV</span>
+                        <span class="input-label lblwhite">{{personagem.atributos.pv}}</span>
+                    </label>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">DX</span>
+                        <span class="input-label lblwhite">{{personagem.atributos.dx}}</span>
+                    </label>
+                </div>
+
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">VON</span>
+                        <span class="input-label lblwhite">{{personagem.atributos.von}}</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">IQ</span>
+                        <span class="input-label lblwhite">{{personagem.atributos.iq}}</span>
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">
+                            PER
+                        </span>
+                        <span class="input-label lblwhite">{{personagem.atributos.per}}</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">
+                            HT
+                        </span>
+                        <span class="input-label lblwhite">{{personagem.atributos.ht}}</span>
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input cl">
+                        <span class="input-label ">
+                            PF
+                        </span>
+                        <span class="input-label lblwhite">{{personagem.atributos.pf}}</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="card">
+                <!--Calculados-->
+                <div class="item item-text-wrap">
+                    <div class="item item-divider">
+                        <span class="ion-calculator"></span> Calculados
+                    </div>
+                    <div class="row">
+                        <div class="col">V. Bas.</div>
+                        <div class="col">D. Bas.</div>
+                        <div class="col">Gdp</div>
+                        <div class="col">Bal</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{personagem.getVelBas();}}</div>
+                        <div class="col">{{personagem.getDesBas();}}</div>
+                        <div class="col">{{personagem.getGdp();}}</div>
+                        <div class="col">{{personagem.getGeb();}}</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        <div class="item item-divider">
+                            <span class="ion-calculator"></span> Cargas
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider">
+                                <span class="ion-calculator"></span> Nenhuma (0) = BC
+                            </div>
+                            <div class="row">
+                                <div class="col">Base C.</div>
+                                <div class="col">Desl.</div>
+                                <div class="col">Esq.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{personagem.getNenhuma().bc;}}</div>
+                                <div class="col">{{personagem.getNenhuma().db;}}</div>
+                                <div class="col">{{personagem.getNenhuma().es;}}</div>
+                            </div>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider">
+                                <span class="ion-calculator"></span> Leve (1) = 2xBC
+                            </div>
+                            <div class="row">
+                                <div class="col">Base C.</div>
+                                <div class="col">Desl.</div>
+                                <div class="col">Esq.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{personagem.getLeve().bc;}}</div>
+                                <div class="col">{{personagem.getLeve().db;}}</div>
+                                <div class="col">{{personagem.getLeve().es;}}</div>
+                            </div>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider">
+                                <span class="ion-calculator"></span> Media (2) = 3xBC
+                            </div>
+                            <div class="row">
+                                <div class="col">Base C.</div>
+                                <div class="col">Desl.</div>
+                                <div class="col">Esq.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{personagem.getMedia().bc;}}</div>
+                                <div class="col">{{personagem.getMedia().db;}}</div>
+                                <div class="col">{{personagem.getMedia().es;}}</div>
+                            </div>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider">
+                                <span class="ion-calculator"></span> Pesada (3) = 6xBC
+                            </div>
+                            <div class="row">
+                                <div class="col">Base C.</div>
+                                <div class="col">Desl.</div>
+                                <div class="col">Esq.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{personagem.getPesada().bc;}}</div>
+                                <div class="col">{{personagem.getPesada().db;}}</div>
+                                <div class="col">{{personagem.getPesada().es;}}</div>
+                            </div>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider">
+                                <span class="ion-calculator"></span> Muito Pesada(4) = 10xBC
+                            </div>
+                            <div class="row">
+                                <div class="col">Base C.</div>
+                                <div class="col">Desl.</div>
+                                <div class="col">Esq.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{personagem.getMuitoPesada().bc;}}</div>
+                                <div class="col">{{personagem.getMuitoPesada().db;}}</div>
+                                <div class="col">{{personagem.getMuitoPesada().es;}}</div>
+                            </div>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <div class="item item-divider assertive">
+                                <span class="ion-calculator"></span> Total Pontos - {{personagem.getPrecoFichaReal()}}
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Pericias-->
+        <div ng-show="pericias">
+            <div class="list">
+                <div ng-repeat="p in personagem.pericias">
+                    <div class="item item-divider">
+                        <label class="item">
+                            {{p.nome}}
+                        </label>
+                        <label class="item">
+                            {{p.nh}} - ({{personagem.getPericiaValor(p) + p.plus }}) - {{p.custo}}  +/-({{p.plus}})
+                        </label>
+                        <div>
+                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plus(p)"></a>
+                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="less(p)"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Vantagens-->
+        <div ng-show="vantagens">
+            <div class="list">
+                <div ng-repeat="v in personagem.vantagens">
+                    <div class="item item-divider">
+                        <label class="item">
+                            {{v.nome}}
+                        </label>
+                        <label class="item">
+                            Custo({{v.custo}}) + Plus({{v.plus}}) = ({{ personagem.getVantagemValor(v) + v.plus}})
+                        </label>
+                        <div>
+                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plusVantagem(v)"></a>
+                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessVantagem(v)"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Desvantagens-->
+        <div ng-show="desvantagens">
+            <div class="list">
+                <div ng-repeat="d in personagem.desvantagens">
+                    <div class="item item-divider">
+                        <label class="item">
+                            {{d.nome}}
+                        </label>
+                        <label class="item">
+                            {{d.custo}} + Plus({{d.plus}}) = ({{ personagem.getdesvantagemValor(d) + d.plus}})
+                        </label>
+                        <div>
+                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plusdesvantagem(d)"></a>
+                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessdesvantagem(d)"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Equipamentos-->
+        <div ng-show="equipament">
+            <div class="card">
+                <div class="button-bar">
+                    <a class="button button-positive" ng-click="addEquipamentos()">Novo</a>
+                    <!--<a class="button button-clear" ng-click="clearForm()">Limpar</a>-->
+                    <a class="button button-clear" ng-click="removerEquipamentos()">Excluir todos</a>
+                </div>
+            </div>
+
+            <div class="card" ng-repeat="eq in personagem.equipamentos">
+            <!--<div class="card" ng-repeat="eq in mock">-->
+                <div class="item item-divider">
+                    {{eq.nome}}
+                </div>
+                <div class="item item-text-wrap">
+                    {{eq.descricao}}
+                </div>
+                <div class="item item-divider">
+                    <button class="button button-clear" style="float:right" ng-click="editarEquipamento(eq)">
+                        <i class="icon ion-edit"></i>
+                    </button>
+                    <button class="button button-clear" style="float:right" ng-click="removerEquipamento(eq)">
+                        <i class="icon ion-trash-a"></i>
+                    </button>
+                </div>
+            </div>            
+        </div>
+
+    </ion-content>
+</ion-view>
