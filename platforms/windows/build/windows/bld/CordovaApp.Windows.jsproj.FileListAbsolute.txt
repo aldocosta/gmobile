@@ -1,0 +1,17 @@
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\debug\anycpu\win8.1\resources.pri
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\debug\anycpu\win8.1\AppxManifest.xml
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\debug\anycpu\win8.1\CordovaApp.Windows.build.appxrecipe
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\priconfig.xml
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\priconfig.xml.intermediate
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\layout.resfiles
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\layout.resfiles.intermediate
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\resources.resfiles
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\resources.resfiles.intermediate
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\pri.resfiles
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\pri.resfiles.intermediate
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\qualifiers.txt
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\qualifiers.txt.intermediate
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\ProjectArchitectures.txt
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\package.map.txt
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\build\windows\bld\_pkginfo.txt

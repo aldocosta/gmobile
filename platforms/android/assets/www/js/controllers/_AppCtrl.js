@@ -1106,6 +1106,16 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
         vibrateAction(100);
     }
 
+    $scope.shareResult= function(){
+        window.plugins.socialsharing.shareViaWhatsApp('Gmobi: Rolagem: ' + $scope.d6Result, 
+            null /* img */,
+            null /* url */,
+            function() {
+                console.log('share ok');
+            }, 
+            function(errormsg){alert(errormsg)});
+    }
+
     $scope.atributosCalc = function(){
         var ret = 0;
         if ($scope.user.atributos.st > 0) {
@@ -1168,8 +1178,6 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
             $ionicLoading.hide();            
         });    
     }
-
-
 
 
 }]);

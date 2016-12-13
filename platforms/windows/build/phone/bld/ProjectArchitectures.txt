@@ -1,0 +1,2 @@
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\CordovaApp.Phone.jsproj;neutral
+C:\Users\Aldo\Documents\GitHub\gmobile\plugins\cordova-plugin-vibration\src\windows\Vibration\Vibration.csproj;neutral

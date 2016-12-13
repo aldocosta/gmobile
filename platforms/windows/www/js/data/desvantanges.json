@@ -1,0 +1,1137 @@
+﻿[
+  {
+    "tipo": "desvantanges",
+    "nome": "Acima do Peso",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Acomodado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Alcolismo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Altruísmo",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Amigável",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Amnésia",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Antecedentes Mundanos",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Antipático",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Aparência",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Apetite Incontrolável",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Assexuado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Assustar animais",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Ataque Infeccioso",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Atavismo por Estresse",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Atento",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Atrapalhado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Autodestruição",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Avareza",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Aversão",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Aversões",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Azar",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Baixa Autoestima",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Barulhento",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Bestial",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Bioquímica Incomum",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Briguento",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Características Distintas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Característica Sobrenaturais",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Castrado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Cegueira",
+    "custo": "-50"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Cegueira Noturna",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Chauvinista",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Circuspecção",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Cleptomania",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Cobiça",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Código de honra",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Completamente Desastrado",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Complexo de Culpa",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Compreensivo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Compulsão",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Confuso",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Consumo Ampliado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Convulsões Pós-combate",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Corcunda",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Covardia",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Credulidade",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Criativo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Cuidadoso",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Curiosidade",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Daltonismo",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Deficiência Física",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Deficiências Menores",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dependência",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dependentes",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Depressão Crônica",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Desastrado",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Desatento",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Desdobrameto de Personalidade",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Despretencioso",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Destino",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "destruidor de Vida",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dever",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Diata Restrita",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dificuldade com Números",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dislexia",
+    "custo": "-10"
+  },  
+  {
+    "tipo": "desvantanges",
+    "nome": "Disopia",
+    "custo": "-25"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Disomia",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Distraçào",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Distraído",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Disturbio Neurológico",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dívidas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Doença Contagiosa",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Doente terminal",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dor Crônica",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Dorminhoco",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Doutrinas Religiosas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Drenagem",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Duro de Ouvido",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Egoísmo",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Elétrico",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Embotado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Enjoadíço",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Enjoo",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Enjoo Espacial",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Enjoo Temporal",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Entorpecido",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Enxerido",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Epilepsia",
+    "custo": "-30"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Estigma Social",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Estômago Sensível",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Excesso de Confiança",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Expectativa de Vida Reduzida",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fácil de Decifrar",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fácil de Matar",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fanatismo",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fantasias",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Feições Estranhas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Ferido",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Flashbacks",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fobias",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fora de Forma",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Forma de Sombras",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fragilidade",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fragilidade em Aceleração",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fraqueza",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Fúria",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Gagueira",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Gigantismo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Gordo",
+    "custo": "-3"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Gregário",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Gula",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Hábitos Detestáveis",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Hábitos ou Expressões",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Hemofilia",
+    "custo": "-30"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Hiperalgia",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Honestidade",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Horizontal",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Identidade Secreta",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Identidade Trocada",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Impulsividade",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Incapaz de Aprender",
+    "custo": "-30"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Incapaz de Falar",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Incapaz de Flutuar",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Incapaz de Sentir Prazer",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Incompetente",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Indeciso",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Indiferente",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Indulgente",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Ingênuo",
+    "custo": "-10"
+  },  
+  {
+    "tipo": "desvantanges",
+    "nome": "Inimigos",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Insensível",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Insone",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Intolerância",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Intolerância ao Álcool",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Intolerância-G",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Inveja",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Invertebrado",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Irritabilidade",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Lunático",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Luxúria",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Magnetismo Sobrenatural",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Magro",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Maldição",
+    "custo": "-75"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Maldição Divina",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Maneta (um braço)",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Maneta (uma mão)",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Maníaco-depressivo",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Manuseadores Precários",
+    "custo": "-30"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Manutenção",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mão Fraca",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Marca Registrada",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mau Cheiro",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Megalomania",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mentalidade de Escravo",
+    "custo": "-40"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mente Aberta",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mordida Fraca",
+    "custo": "-2"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mudança de Personalidade",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Mudez",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Muito Fora de Forma",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Muito Gordo",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Nanismo",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Não-Iconográfico",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "No Limite",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Noturno",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "NT Baixo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Oblívio",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Obsessão",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Orgulhoso",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Pacifismo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Padrão de Tempo Reduzido",
+    "custo": "-100"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Paralisia Frente ao Combate",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Paranoia",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Perna Torta",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Pesadelos",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Piromania",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Pouca Empatia",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Preferências",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Preguiça",
+    "custo": "-10"
+  },  
+  {
+    "tipo": "desvantanges",
+    "nome": "Problemas de Coluna",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Recuperação Lenta",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Refeição Demorada",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Reprogramável",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Repugnância",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Reputação",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Ressacas Terríveis",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Riqueza",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sadismo",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sangue Frio",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sanguinolência",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Segredo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem Imaginação",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem Manuseadores",
+    "custo": "-50"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem Noção de Profundidade",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem Pernas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem Recuperação",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sem um Dedo",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Semiereto",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sendo do Dever",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Simpático",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Solitário",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sonambulismo",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sonhador",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sono Complementar",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sono Leve",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Sonolento",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Status",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Supersensitivo",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Suporte de Vida Ampliado",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Surdez",
+    "custo": "-20"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Suceptibilidade à Magia",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Suscetível",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Teimosia",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Temor",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Tetraplégico",
+    "custo": "-80"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Timidez",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Trapaceiro",
+    "custo": "-15"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Único",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Veracidade",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Viciado em Trabalho",
+    "custo": "-5"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Vício",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Visão Restrita",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Voto",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Voz Irritante",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Vozes Fantasmagóricas",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Vulnerabilidade",
+    "custo": "-1"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Xenofilia",
+    "custo": "-10"
+  },
+  {
+    "tipo": "desvantanges",
+    "nome": "Zarolho",
+    "custo": "-15"
+  }
+]

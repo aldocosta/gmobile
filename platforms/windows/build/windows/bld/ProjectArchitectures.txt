@@ -1,0 +1,1 @@
+C:\Users\Aldo\Documents\GitHub\gmobile\platforms\windows\CordovaApp.Windows.jsproj;neutral

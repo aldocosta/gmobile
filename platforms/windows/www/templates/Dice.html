@@ -1,0 +1,40 @@
+﻿<ion-view view-title="">
+    <ion-header-bar>
+        <h1 class="title"><i class="icon ion-settings"></i> Ferramentas</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModal('tools')">Fechar </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                 Rolador Dados(D6)
+            </div>
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="number" placeholder="Ex.: 3" ng-model="d6times">
+                        </label>
+                        <button class="button button-small positive" ng-click="rolarDados(d6times)">
+                            <i class="icon ion-play"> </i> Rolar
+                        </button>
+                        <button 
+                        onclick="">
+                        msg via WhatsApp (with errcallback)
+                        </button
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider">
+                {{d6Result}}
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                Em breve novos recursos.
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

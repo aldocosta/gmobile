@@ -5,3 +5,4 @@ set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
 cordova run android --device
 
 echo Running!
+pause
