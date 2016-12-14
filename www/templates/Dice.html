@@ -13,16 +13,15 @@
             <div class="item item-text-wrap">
                 <div class="list">
                     <div class="item item-input-inset">
-                        <label class="item-input-wrapper">
+                        <label class="item-input-wrapper" style='width:25px !important'>
                             <input type="number" placeholder="Ex.: 3" ng-model="d6times">
                         </label>
                         <button class="button button-small positive" ng-click="rolarDados(d6times)">
                             <i class="icon ion-play"> </i> Rolar
                         </button>
-                        <button 
-                        onclick="">
-                        msg via WhatsApp (with errcallback)
-                        </button
+                        <button class="button button-small positive" ng-click="shareResult()">
+                            <i class="icon ion-share"> </i> Enviar
+                        </button>
                     </div>
                 </div>
             </div>

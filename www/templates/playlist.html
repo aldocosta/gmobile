@@ -179,23 +179,28 @@
         </div>
 
         <!--Pericias-->
-        <div ng-show="pericias">
+        <div ng-show="pericias">        
             <div class="list">
-                <div ng-repeat="p in personagem.pericias">
-                    <div class="item item-divider">
-                        <label class="item">
-                            {{p.nome}}
-                        </label>
-                        <label class="item">
-                            {{p.nh}} - ({{personagem.getPericiaValor(p) + p.plus }}) - {{p.custo}}  +/-({{p.plus}})
-                        </label>
-                        <div>
-                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plus(p)"></a>
-                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="less(p)"></a>
+                <label class="item item-input">
+                    <input type="text" placeholder="Pesquisar Pericias" ng-model="userpericias.nome" id="txtpesquisapericias">
+                </label>
+                <ion-scroll zooming="true" direction="y" style="height: 500px">        
+                    <div ng-repeat="p in personagem.pericias | filter:userpericias">
+                        <div class="item item-divider">
+                            <label class="item">
+                                {{p.nome}}
+                            </label>
+                            <label class="item">
+                                {{p.nh}} - ({{personagem.getPericiaValor(p) + p.plus }}) - {{p.custo}}  +/-({{p.plus}})
+                            </label>
+                            <div>
+                                <a class="button button-icon icon ion-plus-circled positive" ng-click="plus(p)"></a>
+                                <a class="button button-icon icon ion-minus-circled assertive" ng-click="less(p)"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </ion-scroll>   
+            </div>         
         </div>
 
         <!--Vantagens-->
