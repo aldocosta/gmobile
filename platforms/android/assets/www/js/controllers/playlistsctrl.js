@@ -1,1 +1,96 @@
-﻿ang.controller("PlaylistsCtrl", ["$scope", "$ionicActionSheet", "$ionicSideMenuDelegate", "$rootScope", "Users", "$ionicLoading", "$ionicPopup", "$ionicModal", "$ionicScrollDelegate", "Config", function (a, b, c, d, e, f, g, h, i, j) { var l = document.getElementById("viewkey"); l && (l.style.display = "none"); var m = function () { var b = document.getElementById("myCanvas2").getContext("2d"), c = j.windowConfig.screenResolution.getIdealw(), d = j.windowConfig.screenResolution.getIdealh(); b.clearRect(0, 0, c, d), a.editando = !1, a.personagem = e.getUser(), a.value = "", l = document.getElementById("viewkey"), l && (l.style.display = "none") }; a.showMote = function (a) { g.alert({ title: "Frase do personagem", template: a }) }, a.windowConfig = j.windowConfig, a.playlists = [{ title: "Atributos", id: 1 }, { title: "Pericias", id: 2 }, { title: "Vantagens", id: 3 }, { title: "Desvantagens", id: 4 }, { title: "Equipamentos", id: 5 }], d.$on("someEvent", function (b, c) { f.show({ template: "Aguarde..." }), a.value = c.nome, e.returnUsers().then(function (b) { l = document.getElementById("viewkey"), l && (l.style.display = "block"), i.scrollTop(), a.editando = !0, users = b, a.personagem = users.search({ key: "id", value: c.id }); var d = document.getElementById("imgAt"); d.style.width = 200, d.style.height = 300, d.src = a.personagem.img, d.onload = function () { var a = document.getElementById("myCanvas2").getContext("2d"), b = j.windowConfig.screenResolution.getIdealw(), c = j.windowConfig.screenResolution.getIdealh(); a.drawImage(this, 0, 0, b, c), this.src = "", f.hide() } }) }), a.editar = function (a) { m(), d.$emit("eventoEditar", a) } }]);
+﻿ang.controller('PlaylistsCtrl', ['$scope', '$ionicActionSheet', '$ionicSideMenuDelegate', '$rootScope', 'Users', '$ionicLoading', '$ionicPopup',
+    '$ionicModal', '$ionicScrollDelegate', 'Config',
+    function ($scope, $ionicActionSheet, $ionicSideMenuDelegate, $rootScope, Users, $ionicLoading, $ionicPopup, $ionicModal, $ionicScrollDelegate,
+        Config) {
+
+        var showAlert = function (msg) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Informação',
+                template: msg
+            });
+        };
+        var viewkey = document.getElementById('viewkey');
+        if (viewkey) {
+            viewkey.style.display = 'none';
+        }
+
+        var clearAll = function () {
+            var canvas = document.getElementById('myCanvas2').getContext("2d");
+            var w = Config.windowConfig.screenResolution.getIdealw();
+            var h = Config.windowConfig.screenResolution.getIdealh();
+            canvas.clearRect(0, 0, w, h);
+            $scope.editando = false;
+            $scope.personagem = Users.getUser();
+            $scope.value = '';
+            
+            viewkey = document.getElementById('viewkey');
+            if (viewkey) {
+                viewkey.style.display = 'none';
+            }
+        }
+
+        $scope.showMote = function (msg) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Frase do personagem',
+                template: msg
+            });
+        }
+
+        $scope.windowConfig = Config.windowConfig;
+
+        $scope.playlists = [
+          { title: 'Atributos', id: 1 },
+          { title: 'Pericias', id: 2 },
+          { title: 'Vantagens', id: 3 },
+          { title: 'Desvantagens', id: 4 },
+          { title: 'Equipamentos', id: 5 }
+        ];
+
+        $rootScope.$on('someEvent', function (e, mass) {
+            $ionicLoading.show({
+                template: 'Aguarde...'
+            });
+
+            $scope.value = mass.nome;
+            
+            Users.returnUsers().then(function (u) {
+                viewkey = document.getElementById('viewkey');
+                if (viewkey) {
+                    viewkey.style.display = 'block';
+                }
+
+                $ionicScrollDelegate.scrollTop();
+                $scope.editando = true;
+                users = u;
+                $scope.personagem = users.search({ key: 'id', value: mass.id });
+                var img = document.getElementById('imgAt');
+                img.style.width = 200;
+                img.style.height = 300;
+                img.src = $scope.personagem.img;
+
+                img.onload = function () {
+                    var canvas = document.getElementById('myCanvas2').getContext("2d");
+                    var w = Config.windowConfig.screenResolution.getIdealw();
+                    var h = Config.windowConfig.screenResolution.getIdealh();
+                    canvas.drawImage(this, 0, 0, w, h);
+                    this.src = '';
+                    $ionicLoading.hide();
+                }
+            });
+        });
+
+
+        $scope.editar = function (p) {
+            //var canvas = document.getElementById('myCanvas2').getContext("2d");
+            //var w = Config.windowConfig.screenResolution.getIdealw();
+            //var h = Config.windowConfig.screenResolution.getIdealh();
+            //canvas.clearRect(0, 0, w, h);
+            //$scope.editando = false;
+            //$scope.personagem = Users.getUser();
+            //$scope.value = '';
+            clearAll();
+            $rootScope.$emit('eventoEditar', p);
+        }
+
+
+    }]);

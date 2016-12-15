@@ -1,1 +1,187 @@
-﻿"use strict"; ang.controller("PlaylistCtrl", ["$scope", "$stateParams", "$rootScope", "$location", "Users", "$ionicLoading", "$ionicScrollDelegate", "Plugins", "$ionicModal", "$ionicPopup", function (a, b, c, d, e, f, g, h, i, j) { var k = []; i.fromTemplateUrl("templates/equipamentos.html", { scope: a }).then(function (b) { a.equipamentos = b }), 0 != d.search().v && (f.show({ template: "Aguarde..." }), e.returnUsers().then(function (b) { k = b, a.personagem = k.search({ key: "nome", value: d.search().v }); for (var c = 0; c < a.personagem.equipamentos.length; c++) delete a.personagem.equipamentos[c].$$hashKey; f.hide(), g.scrollTop() })), a.parametro = b.playlistId, "Atributos" == a.parametro && (a.atributos = !0), "Pericias" == a.parametro && (a.pericias = !0), "Vantagens" == a.parametro && (a.vantagens = !0), "Desvantagens" == a.parametro && (a.desvantagens = !0), "Equipamentos" == a.parametro && (a.equipament = !0), a.plus = function (b) { b.plus++; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.less = function (b) { b.plus--; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.plusVantagem = function (b) { b.plus++; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.lessVantagem = function (b) { b.plus--; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.plusdesvantagem = function (b) { b.plus++; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.lessdesvantagem = function (b) { b.plus--; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) }, a.addEquipamentos = function () { a.equipamento && (a.equipamento.nome = "", a.equipamento.descricao = ""), a.edit = !1, a.equipamentos.show() }, a.salvarEquipamento = function (b) { var c = { nome: b.nome, descricao: b.descricao }; if ("" != c.nome) { for (var d = a.personagem.equipamentos.length - 1; d >= 0; d--) delete a.personagem.equipamentos[d].$$hashKey; a.personagem.equipamentos.push(c); var f = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(f, a.personagem.id), a.equipamentos.hide().then(function () { b.nome = "", b.descricao = "" }) } }, a.editarEquipamento = function (b) { a.equipamentoedit = b, a.edit = !0, a.equipamentos.show() }, a.editarEquipamentoUsuario = function () { var b = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(b, a.personagem.id), a.equipamentos.hide() }, a.removerEquipamento = function (b) { j.confirm({ title: "Remover Equipamento?", template: "Deseja realmente remover este equipamento?" }).then(function (c) { if (c) { a.personagem.equipamentos.remove({ key: "nome", value: b.nome }); var d = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(d, a.personagem.id) } }) }, a.removerEquipamentos = function () { j.confirm({ title: "Remover Equipamentos?", template: "Deseja realmente remover todos equipamentos?" }).then(function (b) { if (b) { a.personagem.equipamentos = []; var c = e.returnUserToSave(a.personagem); h.Sql.executeQueryUpdate(c, a.personagem.id) } }) }, a.closeModal = function (b) { "equipamentos" == b && a.equipamentos.hide() }, a.$on("eventoResetDados", function () { a.personagem = null }) }]);
+﻿"use strict";
+ang.controller('PlaylistCtrl', ['$scope', '$stateParams', '$rootScope', '$location', 'Users', '$ionicLoading', '$ionicScrollDelegate', 'Plugins',
+'$ionicModal','$ionicPopup',
+    function ($scope, $stateParams, $rootScope, $location, Users, $ionicLoading, $ionicScrollDelegate, Plugins,$ionicModal
+        ,$ionicPopup) {
+        var users = [];
+
+        $ionicModal.fromTemplateUrl('templates/equipamentos.html', {
+            scope: $scope
+        }).then(function (modal) {
+            $scope.equipamentos = modal;
+        });
+
+        if ($location.search().v != 0) {
+            $ionicLoading.show({
+                template: 'Aguarde...'
+            });
+            Users.returnUsers().then(function (u) {
+                users = u;
+                $scope.personagem = users.search({ key: 'nome', value: $location.search().v });
+
+                for (var i = 0; i < $scope.personagem.equipamentos.length; i++) {
+                    delete $scope.personagem.equipamentos[i]['$$hashKey'];
+                }
+
+                $scope.parametro = $scope.parametro + ' ' + $scope.personagem.getCustoPericias();
+
+                $ionicLoading.hide();
+                $ionicScrollDelegate.scrollTop();
+            });
+        }
+
+        /*verificando qual aba da ficha é para mostrar*/
+        $scope.parametro = $stateParams.playlistId;
+        if ($scope.parametro == 'Atributos') {
+            $scope.atributos = true;
+        }
+
+        if ($scope.parametro == 'Pericias') {
+            $scope.pericias = true;
+        }
+
+        if ($scope.parametro == 'Vantagens') {
+            $scope.vantagens = true;
+        }
+
+        if ($scope.parametro == 'Desvantagens') {
+            $scope.desvantagens = true;
+        }
+
+        if ($scope.parametro == 'Equipamentos') {
+            $scope.equipament = true;
+        }
+
+
+        $scope.plus = function (p) {
+            p.plus++;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.less = function (p) {
+            p.plus--;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.plusVantagem = function (v) {
+            v.plus++;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.lessVantagem = function (v) {
+            v.plus--;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.plusdesvantagem = function (v) {
+            v.plus++;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.lessdesvantagem = function (v) {
+            v.plus--;
+            var stringado = Users.returnUserToSave($scope.personagem);
+
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        }
+
+        $scope.addEquipamentos = function () {
+            if ($scope.equipamento) {
+                $scope.equipamento.nome = '';
+                $scope.equipamento.descricao = '';
+            }
+
+            $scope.edit = false;
+            $scope.equipamentos.show();
+        }
+
+        $scope.salvarEquipamento = function (equipamento) {
+            var obj = { nome: equipamento.nome, descricao: equipamento.descricao }
+
+            if (obj.nome != '') {
+
+                for (var i = $scope.personagem.equipamentos.length - 1; i >= 0; i--) {
+                    delete $scope.personagem.equipamentos[i].$$hashKey; 
+                }
+
+                $scope.personagem.equipamentos.push(obj);
+                var stringado = Users.returnUserToSave($scope.personagem);
+                Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+                
+                $scope.equipamentos.hide().then(function(){                    
+                    equipamento.nome = '';
+                    equipamento.descricao = '';
+                });                
+            }
+        }
+
+        $scope.editarEquipamento = function(eq){
+            $scope.equipamentoedit = eq;
+            $scope.edit = true;
+            $scope.equipamentos.show();        
+        }
+
+
+        $scope.editarEquipamentoUsuario = function () {
+            var stringado = Users.returnUserToSave($scope.personagem);
+            Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+            $scope.equipamentos.hide();
+        }
+
+         $scope.removerEquipamento = function (equipamento) {
+            $ionicPopup.confirm({
+                title: 'Remover Equipamento?',
+                template: 'Deseja realmente remover este equipamento?'
+            }).then(function (res) {
+                if (res) {                    
+                    $scope.personagem.equipamentos.remove({ key: 'nome', value: equipamento.nome });
+                    var stringado = Users.returnUserToSave($scope.personagem);
+                    Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);                    
+                }
+            });
+        }
+
+        $scope.removerEquipamentos = function () {
+            $ionicPopup.confirm({
+                title: 'Remover Equipamentos?',
+                template: 'Deseja realmente remover todos equipamentos?'
+            }).then(function (res) {
+                if (res) {
+                    $scope.personagem.equipamentos = [];
+                    var stringado = Users.returnUserToSave($scope.personagem);
+                    Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+                }
+            });        
+        }        
+
+        $scope.closeModal = function (modal) {
+            if(modal=='equipamentos'){
+                $scope.equipamentos.hide();
+            }
+        }; 
+
+        $scope.$on('eventoResetDados', function () {
+            $scope.personagem = null;
+        });
+        //var oldSoftBack = $rootScope.$ionicGoBack;
+
+        //$rootScope.$ionicGoBack = function () {
+
+        //    var stringado = Users.returnUserToSave($scope.personagem);
+
+        //    Plugins.Sql.executeQueryUpdate(stringado, $scope.personagem.id);
+        //    $ionicLoading.hide();
+        //    oldSoftBack();
+        //};
+
+    }]);
