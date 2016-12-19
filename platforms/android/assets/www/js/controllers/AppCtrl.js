@@ -331,7 +331,7 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
             //cancelText: 'Cancel',
             //cancel: function () {
             //    // add cancel code..
-            //},
+            //}, 
             buttonClicked: function (index) {
                 $ionicScrollDelegate.scrollTop();
 
@@ -339,27 +339,24 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
                 if (index == 0) {
                     clearAll();
 
-                    if ($scope.config.firstRun) {
+                    if ($scope.config.firstRun <=3) {
                         var ret = $ionicPopup.alert({
-                            title: 'First Run',
-                            template: 'Atenção, não esqueça de personalizar vantagens/desvantagens que ' +
+                            title: 'Configurações Recomendadas',
+                            template: 'Atenção, não se esqueça de personalizar vantagens/desvantagens que ' +
                             ' contém itens que podem variar o custo de acordo com nt/narrador critérios!'
                         });
-                        $scope.config.firstRun = false;
-                        $scope.updateConfig($scope.config);
-                        return;
+                        $scope.config.firstRun += 1;
+                        $scope.updateConfig($scope.config);                        
                     }
 
                     $ionicLoading.show({
                         template: 'Atualizando tabelas...'
                     });
 
-                    $scope.novo.show().then(function () {
-                        //loadAll(false).then(function () {
-                            $scope.limpar();
-                            $ionicLoading.hide();
-                            $scope.editando = false;
-                        //});
+                    $scope.novo.show().then(function () {                        
+                        $scope.limpar();
+                        $ionicLoading.hide();
+                        $scope.editando = false;                        
                     });
                 }
 
@@ -1225,32 +1222,34 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
 
         var totalst = 0;
 
-        if($scope.user.atributos.st > 10){
-            totalst = ($scope.user.atributos.st - 10) * 10 ;
-        }
+        totalst = ($scope.user.atributos.st - 10) * 10 ;
+
+        //if($scope.user.atributos.st > 10){            
+        //}
         
         var totaldx = 0;
 
-        if($scope.user.atributos.dx > 10){
+        //if($scope.user.atributos.dx > 10){
             totaldx = ($scope.user.atributos.dx -10) * 20 ;            
-        }
+        //}
         
         var totaliq = 0;
 
-        if($scope.user.atributos.iq > 10){
+        //if($scope.user.atributos.iq > 10){
             totaliq = ($scope.user.atributos.iq -10) * 20 ;            
-        }        
+        //}        
         
         var totalht = 0;
 
-        if($scope.user.atributos.ht > 10){
+        //if($scope.user.atributos.ht > 10){
             totalht = ($scope.user.atributos.ht -10) * 10 ;
-        }       
+        //}       
 
         sum+= totalst + totaldx + totaliq + totalht;
 
 
-        $scope.custototaldaficha += sum;    
+        $scope.custototaldaficha += sum;  
+        vibrateAction(100);  
     }
 
 

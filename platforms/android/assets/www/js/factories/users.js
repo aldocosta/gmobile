@@ -1,1 +1,300 @@
-﻿"use strict"; ang.factory("Users", ["TabelaDano", "Plugins", function (a, b) { return { returnUsers: function () { var c = []; try { var d = new Promise(function (d, e) { document.addEventListener("deviceready", function () { b.Sql.Init().then(function (b) { b.transaction(function (b) { b.executeSql("select id,data from tbpersonagens;", [], function (b, f) { for (var g = 0; g < f.rows.length; g++) { var h = JSON.parse(f.rows.item(g).data), i = f.rows.item(g).id; h.id = i; var j = { getVelBas: function () { return (this.atributos.ht + this.atributos.dx) / 4 }, getDesBas: function () { return Math.round((this.atributos.ht + this.atributos.dx) / 4) }, getGdp: function () { return a.returnTabela().getTabelaDanoPorSt(this.atributos.st).gdp }, getGeb: function () { return a.returnTabela().getTabelaDanoPorSt(this.atributos.st).geb }, getEsquiva: function () { return Math.round(this.atributos.ht + this.atributos.dx) / 4 + 3 }, getNenhuma: function () { return { bc: Math.floor(this.atributos.st * this.atributos.st / 10), db: Math.floor((this.atributos.ht + this.atributos.dx) / 4), es: Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3 } }, getLeve: function () { return { bc: 2 * Math.floor(this.atributos.st * this.atributos.st / 10), db: Math.floor((this.atributos.ht + this.atributos.dx) / 4 * .8), es: Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3 - 1 } }, getMedia: function () { return { bc: 3 * Math.floor(this.atributos.st * this.atributos.st / 10), db: Math.floor((this.atributos.ht + this.atributos.dx) / 4 * .6), es: Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3 - 2 } }, getPesada: function () { return { bc: 6 * Math.floor(this.atributos.st * this.atributos.st / 10), db: Math.floor((this.atributos.ht + this.atributos.dx) / 4 * .4), es: Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3 - 3 } }, getMuitoPesada: function () { return { bc: 10 * Math.floor(this.atributos.st * this.atributos.st / 10), db: Math.floor((this.atributos.ht + this.atributos.dx) / 4 * .2), es: Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3 - 4 } }, getPrecoFicha: function () { var a = 0, b = 0, c = 0, d = 0; return this.__atributos.st > 0 && (a = 10 * (this.__atributos.st - 10)), this.__atributos.dx > 0 && (b = 20 * (this.__atributos.dx - 10)), this.__atributos.iq > 0 && (c = 20 * (this.__atributos.iq - 10)), this.__atributos.ht > 0 && (d = 10 * (this.__atributos.ht - 10)), parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) }, getPrecoFichaReal: function () { var a = this.getPrecoFicha() + this.getCustoPericias() + this.getCustoVantagens() + this.getCustoDesVantagens(), b = 2 * (this.atributos.pv - this.__atributos.pv), c = 3 * (this.atributos.pf - this.__atributos.pf), d = 5 * (this.atributos.per - this.__atributos.per), e = 5 * (this.atributos.von - this.__atributos.von), f = 10 * (this.atributos.st - this.__atributos.st), g = 20 * (this.atributos.dx - this.__atributos.dx), h = 20 * (this.atributos.iq - this.__atributos.iq), i = 10 * (this.atributos.ht - this.__atributos.ht); return a += b + c + d + e + f + g + h + i }, getCustoPericias: function () { for (var a = 0, b = 0; b < this.pericias.length; b++) "FACIL" == this.pericias[b].custo && (a += 1 + this.pericias[b].plus), "MEDIO" == this.pericias[b].custo && (a += 2 * this.pericias[b].plus + 2), "DIFICIL" == this.pericias[b].custo && (a += 4 * this.pericias[b].plus + 4), "MUITO DIFICIL" == this.pericias[b].custo && (a += 8 * this.pericias[b].plus + 8); return parseInt(a) }, getCustoVantagens: function () { for (var a = 0, b = 0; b < this.vantagens.length; b++) a += parseInt(this.vantagens[b].custo); return parseInt(a) }, getCustoDesVantagens: function () { for (var a = 0, b = 0; b < this.desvantagens.length; b++) a += parseInt(this.desvantagens[b].custo); return parseInt(a) }, getVantagemValor: function (a) { return parseInt(a.custo) }, getdesvantagemValor: function (a) { return parseInt(a.custo) }, getPericiaValor: function (a) { var b = ""; return "DX" == a.nh && (b = this.atributos.dx), "VON" == a.nh && (b = this.atributos.von), "IQ" == a.nh && (b = this.atributos.iq), "PER" == a.nh && (b = this.atributos.per), "HT" == a.nh && (b = this.atributos.ht), "PF" == a.nh && (b = this.atributos.pf), "PV" == a.nh && (b = this.atributos.pv), "ST" == a.nh && (b = this.atributos.st), parseInt(b) } }; angular.extend(h, j), c.push(h) } c.length > 0 ? d(c) : e([]) }) }) }) }) }); return d } catch (a) { throw a } }, getUser: function () { return { id: "", nome: "", jogador: "", mote: "", background: "", img: "", atributos: { st: "", dx: "", iq: "", ht: "", pv: "", per: "", von: "", fad: "" }, __atributos: { st: "", dx: "", iq: "", ht: "", pv: "", per: "", von: "", fad: "" }, pericias: [], vantagens: [], desvantagens: [], equipamentos: [], getVelBas: function () { return "" }, getDesBas: function () { return "" }, getGdp: function () { return "" }, getGeb: function () { return "" }, getEsquiva: function () { return "" } } }, returnUserToSave: function (a) { var b = function (a) { var b = 0; return b = a > 100 ? 100 : a < 1 ? 1 : a }, c = function (a, b) { var c = ""; return c = a.length > b ? a.substr(0, b) : a }; return a.atributos.st = b(a.atributos.st), a.atributos.dx = b(a.atributos.dx), a.atributos.iq = b(a.atributos.iq), a.atributos.ht = b(a.atributos.ht), a.mote = c(a.mote, 100), a.background = c(a.background, 21), JSON.stringify(a) } } }]);
+﻿"use strict";
+ang.factory('Users', ['TabelaDano', 'Plugins',
+    function (TabelaDano, Plugins) {
+        return {
+            returnUsers: function () {
+                var users = [];
+                try {
+                    var promise = new Promise(function (resolve, reject) {
+                        document.addEventListener('deviceready', function () {
+                            Plugins.Sql.Init().then(function (db) {
+                                db.transaction(function (tx) {
+                                    tx.executeSql("select id,data from tbpersonagens;", [], function (tx, res) {
+                                        for (var i = 0; i < res.rows.length; i++) {
+                                            var user = JSON.parse(res.rows.item(i).data);
+                                            var id = res.rows.item(i).id;
+                                            user.id = id;
+
+                                            var ex = {
+                                                getVelBas: function () {
+                                                    return (this.atributos.ht + this.atributos.dx) / 4;
+                                                },
+                                                getDesBas: function () {
+                                                    return Math.round((this.atributos.ht + this.atributos.dx) / 4);
+                                                },
+                                                getGdp: function () {
+                                                    return TabelaDano.returnTabela().getTabelaDanoPorSt(this.atributos.st).gdp;
+                                                },
+                                                getGeb: function () {
+                                                    return TabelaDano.returnTabela().getTabelaDanoPorSt(this.atributos.st).geb;
+                                                },
+                                                getEsquiva: function () {
+                                                    return (Math.round(this.atributos.ht + this.atributos.dx) / 4) + 3;
+                                                },
+                                                /*
+                                                    CALCULA BASE DE CARGA, DESCOLAMENTO E ESQUIVA DE ACORDO COM OS LEVEIS
+                                                    NENHUMA(0),LEVE(1),MEDIA(2),PESADA(3),MUITO PESADA(4)
+                                                */
+                                                getNenhuma: function () {
+                                                    return {
+                                                        bc: Math.floor((this.atributos.st * this.atributos.st) / 10),
+                                                        db: Math.floor((this.atributos.ht + this.atributos.dx) / 4),
+                                                        es: (Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3)
+                                                    }
+                                                },
+                                                getLeve: function () {
+                                                    return {
+                                                        bc: Math.floor((this.atributos.st * this.atributos.st) / 10) * 2,
+                                                        db: Math.floor(((this.atributos.ht + this.atributos.dx) / 4) * 0.8),
+                                                        es: (Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3) - 1
+                                                    }
+                                                },
+                                                getMedia: function () {
+                                                    return {
+                                                        bc: Math.floor((this.atributos.st * this.atributos.st) / 10) * 3,
+                                                        db: Math.floor(((this.atributos.ht + this.atributos.dx) / 4) * 0.6),
+                                                        es: (Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3) - 2
+                                                    }
+                                                },
+                                                getPesada: function () {
+                                                    return {
+                                                        bc: Math.floor((this.atributos.st * this.atributos.st) / 10) * 6,
+                                                        db: Math.floor(((this.atributos.ht + this.atributos.dx) / 4) * 0.4),
+                                                        es: (Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3) - 3
+                                                    }
+                                                },
+                                                getMuitoPesada: function () {
+                                                    return {
+                                                        bc: Math.floor((this.atributos.st * this.atributos.st) / 10) * 10,
+                                                        db: Math.floor(((this.atributos.ht + this.atributos.dx) / 4) * 0.2),
+                                                        es: (Math.floor((this.atributos.ht + this.atributos.dx) / 4) + 3) - 4
+                                                    }
+                                                },
+                                                //Pega o preço original da ficha quando foi criada
+                                                getPrecoFicha: function () {
+                                                    var stpreco = 0;
+                                                    var dxpreco = 0;
+                                                    var iqpreco = 0;
+                                                    var htpreco = 0;
+
+
+                                                    if (this.__atributos.st > 0) {
+                                                        stpreco = (this.__atributos.st - 10) * 10;
+                                                    }
+                                                    if (this.__atributos.dx > 0) {
+                                                        dxpreco = (this.__atributos.dx - 10) * 20;
+                                                    }
+                                                    if (this.__atributos.iq > 0) {
+                                                        iqpreco = (this.__atributos.iq - 10) * 20;
+                                                    }
+                                                    if (this.__atributos.ht > 0) {
+                                                        htpreco = (this.__atributos.ht - 10) * 10;
+                                                    }
+                                                    return parseInt(stpreco) + parseInt(dxpreco) + parseInt(iqpreco) + parseInt(htpreco);
+                                                },
+                                                getPrecoFichaReal: function () {
+                                                    var total = this.getPrecoFicha() + this.getCustoPericias() + this.getCustoVantagens() + this.getCustoDesVantagens()
+                                                    var totalpv = ((this.atributos.pv - this.__atributos.pv ) * 2);
+                                                    var totalpf = ((this.atributos.pf - this.__atributos.pf ) * 3);
+                                                    var totalper = ((this.atributos.per - this.__atributos.per ) * 5);
+                                                    var totalvon = ((this.atributos.von - this.__atributos.von ) * 5);
+                                                    var totalst = (this.atributos.st - this.__atributos.st) * 10 ;
+                                                    var totaldx = (this.atributos.dx - this.__atributos.dx) * 20 ;
+                                                    var totaliq = (this.atributos.iq - this.__atributos.iq) * 20 ;
+                                                    var totalht = (this.atributos.ht - this.__atributos.ht) * 10 ;
+                                                    
+
+                                                    total += (totalpv + totalpf + totalper + totalvon 
+                                                        + totalst + totaldx + totaliq + totalht);
+
+                                                    return total;
+                                                },
+                                                getCustoPericias: function () {
+                                                    var sum = 0;
+                                                    for (var i = 0; i < this.pericias.length; i++) {
+                                                        if (this.pericias[i].custo == 'FACIL') {
+                                                            //sum++;
+                                                            sum += 1 + (this.pericias[i].plus);
+                                                        }
+                                                        if (this.pericias[i].custo == 'MEDIO') {
+                                                            //sum = sum + 2;
+                                                            sum += (this.pericias[i].plus * 2) + 2;
+                                                        }
+                                                        if (this.pericias[i].custo == 'DIFICIL') {
+                                                            //sum = sum + 4;
+                                                            sum += (this.pericias[i].plus * 4) + 4;
+                                                        }
+
+                                                        if (this.pericias[i].custo == 'MUITO DIFICIL') {
+                                                            //sum = sum + 8;
+                                                            sum += (this.pericias[i].plus * 8) + 8;
+                                                        }
+                                                    }
+                                                    return parseInt(sum);
+                                                },
+                                                getCustoVantagens: function () {
+                                                    var sum = 0;
+                                                    for (var i = 0; i < this.vantagens.length; i++) {
+                                                        sum += parseInt(this.vantagens[i].custo);
+                                                    }
+                                                    return parseInt(sum);
+                                                },
+                                                getCustoDesVantagens: function () {
+                                                    var sum = 0;
+                                                    for (var i = 0; i < this.desvantagens.length; i++) {
+                                                        sum += parseInt(this.desvantagens[i].custo);
+                                                    }
+                                                    return parseInt(sum);
+                                                },
+                                                getVantagemValor: function (vantagem) {
+                                                    return parseInt(vantagem.custo);
+                                                },
+                                                getdesvantagemValor: function (desvantagem) {
+                                                    return parseInt(desvantagem.custo);
+                                                },
+                                                getPericiaValor: function (pericia) {
+                                                    var ret = '';
+                                                    if (pericia.nh == 'DX') {
+                                                        ret = this.atributos.dx;
+                                                    }
+
+                                                    if (pericia.nh == 'VON') {
+                                                        ret = this.atributos.von;
+                                                    }
+
+                                                    if (pericia.nh == 'IQ') {
+                                                        ret = this.atributos.iq;
+                                                    }
+
+                                                    if (pericia.nh == 'PER') {
+                                                        ret = this.atributos.per;
+                                                    }
+
+                                                    if (pericia.nh == 'HT') {
+                                                        ret = this.atributos.ht;
+                                                    }
+
+                                                    if (pericia.nh == 'PF') {
+                                                        ret = this.atributos.pf;
+                                                    }
+
+                                                    if (pericia.nh == 'PV') {
+                                                        ret = this.atributos.pv;
+                                                    }
+
+                                                    if (pericia.nh == 'ST') {
+                                                        ret = this.atributos.st;
+                                                    }
+                                                    return parseInt(ret);
+                                                }
+                                            }
+                                            angular.extend(user, ex);
+                                            users.push(user);
+                                        }
+                                        if (users.length > 0) {
+                                            resolve(users);
+                                        } else {
+                                            reject([]);
+                                        }
+
+                                    });
+                                });
+                            });
+                        });
+                    });
+
+                    return promise;
+                } catch (e) {
+                    throw e;
+                }
+            },
+            getUser: function () {
+                return {
+                    "id": "",
+                    "nome": "",
+                    "jogador": "",
+                    "mote": "",
+                    "background": "",
+                    "img": "",
+                    "atributos": {
+                        "st": "",
+                        "dx": "",
+                        "iq": "",
+                        "ht": "",
+                        "pv": "",
+                        "per": "",
+                        "von": "",
+                        "fad": ""
+                    },
+                    "__atributos": {
+                        "st": "",
+                        "dx": "",
+                        "iq": "",
+                        "ht": "",
+                        "pv": "",
+                        "per": "",
+                        "von": "",
+                        "fad": ""
+                    },
+                    "pericias": [
+                    ],
+                    "vantagens": [
+                    ],
+                    "desvantagens": [
+                    ],
+                    "equipamentos": [
+                    ],
+                    getVelBas: function () {
+                        return '';
+                    },
+                    getDesBas: function () {
+                        return '';
+                    },
+                    getGdp: function () {
+                        return '';
+                    },
+                    getGeb: function () {
+                        return '';
+                    },
+                    getEsquiva: function () {
+                        return '';
+                    }
+                }
+            },
+            returnUserToSave: function (user) {
+                var fixAtributo = function (attr) {
+                    var ret = 0;
+
+                    if (attr > 100) {
+                        ret = 100;
+                    }
+                    else if (attr < 1) {
+                        ret = 1;
+                    } else {
+                        ret = attr;
+                    }
+
+                    return ret;
+                }
+
+                var fixTexts = function (text, limite) {
+                    var ret = '';
+                    if (text.length > limite) {
+                        ret = text.substr(0, limite);
+                    } else {
+                        ret = text;
+                    }
+                    return ret;
+                }
+
+                user.atributos.st = fixAtributo(user.atributos.st);
+                user.atributos.dx = fixAtributo(user.atributos.dx);
+                user.atributos.iq = fixAtributo(user.atributos.iq);
+                user.atributos.ht = fixAtributo(user.atributos.ht);
+                user.mote = fixTexts(user.mote, 100);
+                user.background = fixTexts(user.background, 21);
+
+                return JSON.stringify(user);
+            }
+        }
+    }]);

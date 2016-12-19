@@ -223,20 +223,22 @@
                     <input type="text" placeholder="Pesquisar Vantagem" ng-model="uservantagens.nome" 
                     id="">
                 </label>
-                <div ng-repeat="v in personagem.vantagens |filter:uservantagens">
-                    <div class="item item-divider">
-                        <label class="item">
-                            {{v.nome}}
-                        </label>
-                        <label class="item">
-                            Custo({{v.custo}}) + Plus({{v.plus}}) = ({{ personagem.getVantagemValor(v) + v.plus}})
-                        </label>
-                        <div>
-                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plusVantagem(v)"></a>
-                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessVantagem(v)"></a>
+                <ion-scroll zooming="true" direction="y" style="height: 500px">        
+                    <div ng-repeat="v in personagem.vantagens |filter:uservantagens">
+                        <div class="item item-divider">
+                            <label class="item">
+                                {{v.nome}}
+                            </label>
+                            <label class="item">
+                                Custo({{v.custo}}) + Plus({{v.plus}}) = ({{ personagem.getVantagemValor(v) + v.plus}})
+                            </label>
+                            <div>
+                                <a class="button button-icon icon ion-plus-circled positive" ng-click="plusVantagem(v)"></a>
+                                <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessVantagem(v)"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </ion-scroll>
             </div>
         </div>
 
@@ -253,20 +255,22 @@
                         <input type="text" placeholder="Pesquisar Desvantagem" ng-model="userdesvantagens.nome" 
                         id="">
                     </label>            
-                <div ng-repeat="d in personagem.desvantagens |filter:userdesvantagens">
-                    <div class="item item-divider">
-                        <label class="item">
-                            {{d.nome}}
-                        </label>
-                        <label class="item">
-                            {{d.custo}} + Plus({{d.plus}}) = ({{ personagem.getdesvantagemValor(d) + d.plus}})
-                        </label>
-                        <div>
-                            <a class="button button-icon icon ion-plus-circled positive" ng-click="plusdesvantagem(d)"></a>
-                            <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessdesvantagem(d)"></a>
+                <ion-scroll zooming="true" direction="y" style="height: 500px">        
+                    <div ng-repeat="d in personagem.desvantagens |filter:userdesvantagens">
+                        <div class="item item-divider">
+                            <label class="item">
+                                {{d.nome}}
+                            </label>
+                            <label class="item">
+                                {{d.custo}} + Plus({{d.plus}}) = ({{ personagem.getdesvantagemValor(d) + d.plus}})
+                            </label>
+                            <div>
+                                <a class="button button-icon icon ion-plus-circled positive" ng-click="plusdesvantagem(d)"></a>
+                                <a class="button button-icon icon ion-minus-circled assertive" ng-click="lessdesvantagem(d)"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </ion-scroll>
             </div>
         </div>
 

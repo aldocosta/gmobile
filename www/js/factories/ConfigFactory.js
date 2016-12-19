@@ -1,1 +1,127 @@
-﻿"use strict"; ang.factory("Config", ["Plugins", function (a) { return { Config: function () { var b = new Promise(function (b, c) { function d() { var b = new Promise(function (b, c) { try { document.addEventListener("deviceready", function () { a.Sql.Init().then(function (a) { a.transaction(function (a) { a.executeSql("select data from tbconfig where id=1;", [], function (a, c) { if (c.rows.length > 0) for (var d = 0; d < c.rows.length; d++) { var e = JSON.parse(c.rows.item(d).data); b(e) } else b({ camera_galeria: !1, vibrate: !0, simetria: !0, firstRun: !0 }), console.log("Retornando as configurações.") }) }) }) }) } catch (a) { c(a) } }); return b } d().then(function (a) { b(a) }, function (a) { console.log(a), c(a) }) }); return b }, SetConfig: function (b) { new Promise(function (c, d) { document.addEventListener("deviceready", function () { a.Sql.Init().then(function (a) { a.transaction(function (a) { a.executeSql("update tbconfig set data =? where id=?", [b, 1]) }, function (a) { console.log("Transaction ERROR: " + a.message) }, function () { console.log("Update na tbconfig OK") }) }) }) }) }, getTabelaElementos: function () { return new Promise(function (b, c) { a.Sql.Init().then(function (a) { a.transaction(function (a) { try { a.executeSql("select * from tbpericias;", [], function (a, d) { if (d.rows.length > 0) { for (var e = [], f = 0; f < d.rows.length; f++) { var g = JSON.parse(d.rows.item(f).data); e.push(g) } e.length > 0 ? b(e) : c(null) } else c(null) }) } catch (a) { c(a.message) } }) }) }) }, windowConfig: { screenResolution: { w: Math.floor(window.innerWidth), h: Math.floor(window.innerHeight), getIdealw: function () { var a = this.w / 100 * 95; return Math.floor(a) }, getIdealh: function () { var a = this.h / 100 * 70; return Math.floor(a) }, getIdealUsersListHeight: function () { var a = this.h / 100 * 66; return Math.floor(a) } } }, Util: { getLabelQualityFoto: function (a) { var b = ""; return b = a <= 10 ? "Baixa qualidade ( Carrega rápido )" : a > 10 && a <= 50 ? "Qualidade ideal ( Carrega normal )" : a > 50 && a <= 80 ? "Qualidade Alta ( Carrega um pouco lento )" : "Qualidade Máxima ( Carrega lento )" } } } }]);
+﻿"use strict";
+ang.factory('Config', ['Plugins', function (Plugins) {
+    return {
+        Config: function () {
+            var configPromise = new Promise(function (s, r) {
+                function populateConfig() {
+                    var promise = new Promise(function (resolve, reject) {
+                        try {
+                            document.addEventListener('deviceready', function () {
+                                Plugins.Sql.Init().then(function (db) {
+                                    db.transaction(function (tx) {
+                                        tx.executeSql("select data from tbconfig where id=1;", [], function (tx, res) {
+                                            if (res.rows.length > 0) {
+                                                for (var i = 0; i < res.rows.length; i++) {
+                                                    var _data = JSON.parse(res.rows.item(i).data);
+                                                    resolve(_data);
+                                                }
+                                            } else {
+                                                resolve({
+                                                    camera_galeria: false,
+                                                    vibrate: true,
+                                                    simetria: true,
+                                                    firstRun: 0
+                                                });
+                                                console.log('Retornando as configurações.')
+                                            }
+
+                                        });
+                                    });
+                                });
+                            });
+                        } catch (e) {
+                            reject(e);
+                        }
+                    });
+                    return promise;
+                }
+                populateConfig().then(function (data) {
+                    s(data);
+                }, function (err) {
+                    console.log(err);
+                    r(err);
+                });
+            });
+
+            return configPromise;
+        },
+        SetConfig: function (config) {
+            var promise = new Promise(function (resolve, reject) {
+                document.addEventListener('deviceready', function () {
+                    Plugins.Sql.Init().then(function (db) {
+                        db.transaction(function (tx) {
+                            tx.executeSql('update tbconfig set data =? where id=?', [config, 1]);
+                        }, function (error) {
+                            console.log('Transaction ERROR: ' + error.message);
+                        }, function () {
+                            console.log('Update na tbconfig OK');
+                        });
+                    });
+                });
+            });
+        },
+        getTabelaElementos: function () {
+            return new Promise(function (resolve, reject) {
+                Plugins.Sql.Init().then(function (db) {
+                    db.transaction(function (tx) {
+                        try {
+                            tx.executeSql("select * from tbpericias;", [], function (tx, res) {
+                                if (res.rows.length > 0) {
+                                    var arr = [];
+                                    for (var i = 0; i < res.rows.length; i++) {
+                                        var _data = JSON.parse(res.rows.item(i).data);
+                                        arr.push(_data);
+                                    }
+                                    if (arr.length > 0) {
+                                        resolve(arr);
+                                    } else {
+                                        reject(null);
+                                    }
+                                } else {
+                                    reject(null);
+                                }
+                            });
+                        } catch (e) {
+                            reject(e.message);
+                        }
+                    });
+                });
+            });
+        },
+        windowConfig: {
+            screenResolution: {
+                w: Math.floor(window.innerWidth),
+                h: Math.floor(window.innerHeight),
+                getIdealw: function () {
+                    var perc = (this.w / 100) * 95;
+                    return Math.floor(perc);
+                },
+                getIdealh: function () {
+                    var perc = (this.h / 100) * 70;
+                    return Math.floor(perc);
+                },
+                getIdealUsersListHeight: function () {
+                    var perc = (this.h / 100) * 66;
+                    return Math.floor(perc);
+                }
+            }
+        },
+        Util: {
+            getLabelQualityFoto: function (valor) {
+                var retorno = '';
+                if (valor <= 10) {
+                    retorno = 'Baixa qualidade ( Carrega rápido )';
+                } else if (valor > 10 && valor <= 50) {
+                    retorno = 'Qualidade ideal ( Carrega normal )';
+                } else if (valor > 50 && valor <= 80) {
+                    retorno = 'Qualidade Alta ( Carrega um pouco lento )';
+                } else {
+                    retorno = 'Qualidade Máxima ( Carrega lento )';
+                }
+
+                return retorno;
+            }
+        }
+    }
+
+}]);

@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 ang.controller('PlaylistCtrl', ['$scope', '$stateParams', '$rootScope', '$location', 'Users', '$ionicLoading', '$ionicScrollDelegate', 'Plugins',
 '$ionicModal','$ionicPopup',
     function ($scope, $stateParams, $rootScope, $location, Users, $ionicLoading, $ionicScrollDelegate, Plugins,$ionicModal
@@ -23,7 +23,7 @@ ang.controller('PlaylistCtrl', ['$scope', '$stateParams', '$rootScope', '$locati
                     delete $scope.personagem.equipamentos[i]['$$hashKey'];
                 }
 
-                $scope.parametro = $scope.parametro + ' Total (' + $scope.personagem.getCustoPericias() +')';
+                //$scope.parametro = $scope.parametro + ' Total (' + $scope.personagem.getCustoPericias() +')';
 
                 $ionicLoading.hide();
                 $ionicScrollDelegate.scrollTop();
