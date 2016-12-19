@@ -674,6 +674,7 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
         $scope.labelDesVantagemTotal = 0;
         $scope.atributoscustonovaficha = 0;
         $scope.totalprecoficha = 0;
+        $scope.custototaldaficha  = 0;
         vibrateAction(100);
     }
 
@@ -1177,6 +1178,79 @@ function ($scope, $ionicModal, $timeout, $ionicActionSheet, $rootScope, Users, P
         }).catch(function (err) {
             $ionicLoading.hide();            
         });    
+    }
+
+    $scope.calcularTotalPontosFicha = function(){
+        var sum = 0;
+        var pericias = $scope.user.pericias;
+        $scope.custototaldaficha = 0;
+        if(pericias){
+            for (var i = 0; i < pericias.length; i++) {
+                if (pericias[i].custo == 'FACIL') {
+                    //sum++;
+                    sum += 1 + (pericias[i].plus);
+                }
+                if (pericias[i].custo == 'MEDIO') {
+                    //sum = sum + 2;
+                    sum += (pericias[i].plus * 2) + 2;
+                }
+                if (pericias[i].custo == 'DIFICIL') {
+                    //sum = sum + 4;
+                    sum += (pericias[i].plus * 4) + 4;
+                }
+
+                if (pericias[i].custo == 'MUITO DIFICIL') {
+                    //sum = sum + 8;
+                    sum += (pericias[i].plus * 8) + 8;
+                }
+            }        
+        }
+
+        var vantagens = $scope.user.vantagens;
+
+        if(vantagens){
+            for (var i = 0; i < vantagens.length; i++) {
+                sum += parseInt(vantagens[i].custo);
+            }            
+        }
+
+        var desvantagens = $scope.user.desvantagens;
+
+        if(desvantagens){
+            for (var i = 0; i < desvantagens.length; i++) {
+                sum += parseInt(desvantagens[i].custo);
+            }            
+        }
+
+
+        var totalst = 0;
+
+        if($scope.user.atributos.st > 10){
+            totalst = ($scope.user.atributos.st - 10) * 10 ;
+        }
+        
+        var totaldx = 0;
+
+        if($scope.user.atributos.dx > 10){
+            totaldx = ($scope.user.atributos.dx -10) * 20 ;            
+        }
+        
+        var totaliq = 0;
+
+        if($scope.user.atributos.iq > 10){
+            totaliq = ($scope.user.atributos.iq -10) * 20 ;            
+        }        
+        
+        var totalht = 0;
+
+        if($scope.user.atributos.ht > 10){
+            totalht = ($scope.user.atributos.ht -10) * 10 ;
+        }       
+
+        sum+= totalst + totaldx + totaliq + totalht;
+
+
+        $scope.custototaldaficha += sum;    
     }
 
 

@@ -23,10 +23,11 @@ ang.controller('PlaylistCtrl', ['$scope', '$stateParams', '$rootScope', '$locati
                     delete $scope.personagem.equipamentos[i]['$$hashKey'];
                 }
 
-                $scope.parametro = $scope.parametro + ' ' + $scope.personagem.getCustoPericias();
+                $scope.parametro = $scope.parametro + ' Total (' + $scope.personagem.getCustoPericias() +')';
 
                 $ionicLoading.hide();
                 $ionicScrollDelegate.scrollTop();
+                $scope.$digest();
             });
         }
 

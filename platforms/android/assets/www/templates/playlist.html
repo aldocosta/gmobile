@@ -181,8 +181,15 @@
         <!--Pericias-->
         <div ng-show="pericias">        
             <div class="list">
+                <div class="list card">
+                  <a href="#" class="item item-icon-left">
+                    <i class="icon ion-calculator"></i>
+                    Total {{' Total (' + personagem.getCustoPericias() +')';}}
+                  </a>
+                </div>  
                 <label class="item item-input">
-                    <input type="text" placeholder="Pesquisar Pericias" ng-model="userpericias.nome" id="txtpesquisapericias">
+                    <input type="text" placeholder="Pesquisar Pericias" ng-model="userpericias.nome" 
+                    id="txtpesquisapericias">
                 </label>
                 <ion-scroll zooming="true" direction="y" style="height: 500px">        
                     <div ng-repeat="p in personagem.pericias | filter:userpericias">
@@ -206,7 +213,17 @@
         <!--Vantagens-->
         <div ng-show="vantagens">
             <div class="list">
-                <div ng-repeat="v in personagem.vantagens">
+                <div class="list card">
+                  <a href="#" class="item item-icon-left">
+                    <i class="icon ion-calculator"></i>
+                    Total {{' Total (' + personagem.getCustoVantagens() +')';}}
+                  </a>
+                </div>  
+                <label class="item item-input">
+                    <input type="text" placeholder="Pesquisar Vantagem" ng-model="uservantagens.nome" 
+                    id="">
+                </label>
+                <div ng-repeat="v in personagem.vantagens |filter:uservantagens">
                     <div class="item item-divider">
                         <label class="item">
                             {{v.nome}}
@@ -226,7 +243,17 @@
         <!--Desvantagens-->
         <div ng-show="desvantagens">
             <div class="list">
-                <div ng-repeat="d in personagem.desvantagens">
+                    <div class="list card">
+                      <a href="#" class="item item-icon-left">
+                        <i class="icon ion-calculator"></i>
+                        Total {{' Total (' + personagem.getCustoDesVantagens() +')';}}
+                      </a>
+                    </div>  
+                    <label class="item item-input">
+                        <input type="text" placeholder="Pesquisar Desvantagem" ng-model="userdesvantagens.nome" 
+                        id="">
+                    </label>            
+                <div ng-repeat="d in personagem.desvantagens |filter:userdesvantagens">
                     <div class="item item-divider">
                         <label class="item">
                             {{d.nome}}
