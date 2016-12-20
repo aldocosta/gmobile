@@ -1,0 +1,176 @@
+warning: LF will be replaced by CRLF in platforms/android/AndroidManifest.xml.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/config.xml b/config.xml[m
+[1mindex 3b736cc..931df0d 100644[m
+[1m--- a/config.xml[m
+[1m+++ b/config.xml[m
+[36m@@ -1,11 +1,11 @@[m
+ <?xml version='1.0' encoding='utf-8'?>[m
+[31m-<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="19" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">[m
+[32m+[m[32m<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">[m
+     [m
+     <name>GMobi</name>[m
+     <description>Gerenciador de planilhas de GURPS 4 ed.[m
+     Recursos :[m
+     Criação de fichas com contagem dos pontos.[m
+[31m-    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados[m
+[32m+[m[32m    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados, compartilhar via Whatsapp resultado dos dados, carregar imagem do personagem (Camera ou Fotos do dispositivo).[m
+     </description>[m
+     <author email="contato@aldocosta.com.br" href="http://aldocosta.com.br/">Aldo Costa</author>[m
+     <content src="index.html" />[m
+[1mdiff --git a/gmobi - build 1.bat b/gmobi - build 1.bat[m
+[1mindex 1a76d1b..c800f1e 100644[m
+[1m--- a/gmobi - build 1.bat[m	
+[1m+++ b/gmobi - build 1.bat[m	
+[36m@@ -1,5 +1,8 @@[m
+ @echo off[m
+ [m
+[32m+[m[32mcd/[m
+[32m+[m[32mcd users\aldo\documents\github\gmobile[m
+[32m+[m
+ set ANDROID_HOME=C:\Program Files (x86)\Android\android-sdk[m
+ set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools[m
+ [m
+[1mdiff --git a/gmobi - build 2.bat b/gmobi - build 2.bat[m
+[1mindex 1c6c515..2e48a80 100644[m
+[1m--- a/gmobi - build 2.bat[m	
+[1m+++ b/gmobi - build 2.bat[m	
+[36m@@ -6,13 +6,13 @@[m [mcd\[m
+ cd program files (x86)\java\jdk1.7.0_55\bin[m
+ [m
+ [m
+[31m-jarsigner -verbose -keystore d:\\gmobi.keystore  C:/Users/Aldo/Documents/GitHub/Gmobi/platforms/android/build/outputs/apk/android-release-unsigned.apk AcsMobileApps[m
+[32m+[m[32mjarsigner -verbose -keystore d:\\gmobi.keystore  C:/Users/Aldo/Documents/GitHub/Gmobile/platforms/android/build/outputs/apk/android-release-unsigned.apk AcsMobileApps[m
+ [m
+ [m
+ cd..\..\..[m
+ cd android\android-sdk\build-tools\24.0.0[m
+ [m
+[31m-zipalign -f -v 4 C:/Users/Aldo/Documents/GitHub/Gmobi/platforms/android/build/outputs/apk/android-release-unsigned.apk C:/Users/Aldo/Documents/GitHub/Gmobi/platforms/android/build/outputs/apk/android-release-zipsigned.apk[m
+[32m+[m[32mzipalign -f -v 4 C:/Users/Aldo/Documents/GitHub/Gmobile/platforms/android/build/outputs/apk/android-release-unsigned.apk C:/Users/Aldo/Documents/GitHub/Gmobile/platforms/android/build/outputs/apk/android-release-zipsigned.apk[m
+ [m
+ echo Finalizado![m
+ pause[m
+\ No newline at end of file[m
+[1mdiff --git a/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock b/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock[m
+[1mindex 1dc266a..6ffbffc 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock and b/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin b/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin[m
+[1mindex e7f7a4e..727e821 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin and b/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin b/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin[m
+[1mindex 25427b9..19e84ed 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin and b/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin b/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin[m
+[1mindex 7d48230..cd7235a 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin and b/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin b/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin[m
+[1mindex 15c46ea..4f41c9f 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin and b/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock b/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock[m
+[1mindex 93c3dec..dca691e 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock and b/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock differ
+[1mdiff --git a/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock b/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock[m
+[1mindex 48db723..1c567d8 100644[m
+Binary files a/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock and b/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock differ
+[1mdiff --git a/platforms/android/AndroidManifest.xml b/platforms/android/AndroidManifest.xml[m
+[1mindex 04e229b..6c5c059 100644[m
+[1m--- a/platforms/android/AndroidManifest.xml[m
+[1m+++ b/platforms/android/AndroidManifest.xml[m
+[36m@@ -1,5 +1,5 @@[m
+ <?xml version='1.0' encoding='utf-8'?>[m
+[31m-<manifest android:hardwareAccelerated="true" android:versionCode="19" android:versionName="0.0.2" package="com.gurps.gmobi" xmlns:android="http://schemas.android.com/apk/res/android">[m
+[32m+[m[32m<manifest android:hardwareAccelerated="true" android:versionCode="20" android:versionName="0.0.2" package="com.gurps.gmobi" xmlns:android="http://schemas.android.com/apk/res/android">[m
+     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />[m
+     <uses-permission android:name="android.permission.INTERNET" />[m
+     <application android:hardwareAccelerated="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:supportsRtl="true">[m
+[1mdiff --git a/platforms/android/assets/www/index.html b/platforms/android/assets/www/index.html[m
+[1mindex f6b150e..47f08fe 100644[m
+[1m--- a/platforms/android/assets/www/index.html[m
+[1m+++ b/platforms/android/assets/www/index.html[m
+[36m@@ -28,7 +28,7 @@[m
+     <script src="js/factories/CrudFactory.min.js"></script>[m
+     <script src="js/jsondataManager.js"></script>[m
+     <script src="js/vantagensManager.js"></script>[m
+[31m-    <script src="js/factories/DiceFactory.js"></script>[m
+[32m+[m[32m    <script src="js/factories/DiceFactory.min.js"></script>[m
+ </head>[m
+ [m
+ <body ng-app="starter">[m
+[1mdiff --git a/platforms/android/assets/www/templates/menu.html b/platforms/android/assets/www/templates/menu.html[m
+[1mindex 21b2b98..8c4c9e2 100644[m
+[1m--- a/platforms/android/assets/www/templates/menu.html[m
+[1m+++ b/platforms/android/assets/www/templates/menu.html[m
+[36m@@ -20,7 +20,8 @@[m
+                     <input type="text" placeholder="Filtrar Personagem" ng-model="filtro.nome">[m
+                 </label>[m
+             </div>            [m
+[31m-            <ion-scroll zooming="true" direction="y" style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">[m
+[32m+[m[32m            <ion-scroll zooming="true" direwarning: LF will be replaced by CRLF in config.xml.
+The file will have its original line endings in your working directory.
+ction="y"[m[41m [m
+[32m+[m[32m            style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">[m
+                 <div class="list list-inset">[m
+                     <ion-list>[m
+                         <ion-item menu-close ng-repeat="u in users | filter:filtro" ng-click="eventoclick(u)">[m
+[1mdiff --git a/platforms/android/res/mipmap-hdpi/icon.png b/platforms/android/res/mipmap-hdpi/icon.png[m
+[1mindex 4d27634..e38b423 100644[m
+Binary files a/platforms/android/res/mipmap-hdpi/icon.png and b/platforms/android/res/mipmap-hdpi/icon.png differ
+[1mdiff --git a/platforms/android/res/mipmap-ldpi/icon.png b/platforms/android/res/mipmap-ldpi/icon.png[m
+[1mindex cd5032a..e774f12 100644[m
+Binary files a/platforms/android/res/mipmap-ldpi/icon.png and b/platforms/android/res/mipmap-ldpi/icon.png differ
+[1mdiff --git a/platforms/android/res/mipmap-mdpi/icon.png b/platforms/android/res/mipmap-mdpi/icon.png[m
+[1mindex e79c606..e9b8d55 100644[m
+Binary files a/platforms/android/res/mipmap-mdpi/icon.png and b/platforms/android/res/mipmap-mdpi/icon.png differ
+[1mdiff --git a/platforms/android/res/mipmap-xhdpi/icon.png b/platforms/android/res/mipmap-xhdpi/icon.png[m
+[1mindex ec7ffbf..e9b06b4 100644[m
+Binary files a/platforms/android/res/mipmap-xhdpi/icon.png and b/platforms/android/res/mipmap-xhdpi/icon.png differ
+[1mdiff --git a/platforms/android/res/xml/config.xml b/platforms/android/res/xml/config.xml[m
+[1mindex 596dc3d..9ecf8c6 100644[m
+[1m--- a/platforms/android/res/xml/config.xml[m
+[1m+++ b/platforms/android/res/xml/config.xml[m
+[36m@@ -1,5 +1,5 @@[m
+ <?xml version='1.0' encoding='utf-8'?>[m
+[31m-<widget android-versionCode="19" id="com.gurps.gmobi" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">[m
+[32m+[m[32m<widget android-versionCode="20" id="com.gurps.gmobi" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">[m
+     <feature name="Camera">[m
+         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />[m
+     </feature>[m
+[36m@@ -20,7 +20,7 @@[m
+     <description>Gerenciador de planilhas de GURPS 4 ed.[m
+     Recursos :[m
+     Criação de fichas com contagem dos pontos.[m
+[31m-    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados[m
+[32m+[m[32m    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados, compartilhar via Whatsapp resultado dos dados, carregar imagem do personagem (Camera ou Fotos do dispositivo).[m
+     </description>[m
+     <author email="contato@aldocosta.com.br" href="http://aldocosta.com.br/">Aldo Costa</author>[m
+     <content src="index.html" />[m
+[1mdiff --git a/www/index.html b/www/index.html[m
+[1mindex f6b150e..47f08fe 100644[m
+[1m--- a/www/index.html[m
+[1m+++ b/www/index.html[m
+[36m@@ -28,7 +28,7 @@[m
+     <script src="js/factories/CrudFactory.min.js"></script>[m
+     <script src="js/jsondataManager.js"></script>[m
+     <script src="js/vantagensManager.js"></script>[m
+[31m-    <script src="js/factories/DiceFactory.js"></script>[m
+[32m+[m[32m    <script src="js/factories/DiceFactory.min.js"></script>[m
+ </head>[m
+ [m
+ <body ng-app="starter">[m
+[1mdiff --git a/www/templates/menu.html b/www/templates/menu.html[m
+[1mindex 21b2b98..8c4c9e2 100644[m
+[1m--- a/www/templates/menu.html[m
+[1m+++ b/www/templates/menu.html[m
+[36m@@ -20,7 +20,8 @@[m
+                     <input type="text" placeholder="Filtrar Personagem" ng-model="filtro.nome">[m
+                 </label>[m
+             </div>            [m
+[31m-            <ion-scroll zooming="true" direction="y" style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">[m
+[32m+[m[32m            <ion-scroll zooming="true" direction="y"[m[41m [m
+[32m+[m[32m            style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">[m
+                 <div class="list list-inset">[m
+                     <ion-list>[m
+                         <ion-item menu-close ng-repeat="u in users | filter:filtro" ng-click="eventoclick(u)">[m
+warning: LF will be replaced by CRLF in platforms/android/res/xml/config.xml.
+The file will have its original line endings in your working directory.

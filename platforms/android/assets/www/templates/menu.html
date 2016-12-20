@@ -20,7 +20,8 @@
                     <input type="text" placeholder="Filtrar Personagem" ng-model="filtro.nome">
                 </label>
             </div>            
-            <ion-scroll zooming="true" direction="y" style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">
+            <ion-scroll zooming="true" direction="y" 
+            style="height:{{windowConfig.screenResolution.getIdealUsersListHeight()}}px">
                 <div class="list list-inset">
                     <ion-list>
                         <ion-item menu-close ng-repeat="u in users | filter:filtro" ng-click="eventoclick(u)">

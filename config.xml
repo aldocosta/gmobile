@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="19" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     
     <name>GMobi</name>
     <description>Gerenciador de planilhas de GURPS 4 ed.
     Recursos :
     Criação de fichas com contagem dos pontos.
-    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados
+    Lista/Cadastro de pericias, vantagens e desvantagens do Gurps, rolador de dados, compartilhar via Whatsapp resultado dos dados, carregar imagem do personagem (Camera ou Fotos do dispositivo).
     </description>
     <author email="contato@aldocosta.com.br" href="http://aldocosta.com.br/">Aldo Costa</author>
     <content src="index.html" />
