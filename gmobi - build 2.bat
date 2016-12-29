@@ -6,7 +6,7 @@ cd\
 cd program files (x86)\java\jdk1.7.0_55\bin
 
 
-jarsigner -verbose -keystore d:\\gmobi.keystore  C:/Users/Aldo/Documents/GitHub/Gmobile/platforms/android/build/outputs/apk/android-release-unsigned.apk AcsMobileApps
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -verbose -keystore d:\\gmobi.keystore  C:/Users/Aldo/Documents/GitHub/Gmobile/platforms/android/build/outputs/apk/android-release-unsigned.apk AcsMobileApps
 
 
 cd..\..\..

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    
+<widget id="com.gurps.gmobi" version="0.0.2" android-versionCode="21" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">    
+    <preference name="windows-target-version" value="UAP" />
     <name>GMobi</name>
     <description>Gerenciador de planilhas de GURPS 4 ed.
     Recursos :
